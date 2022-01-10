@@ -100,6 +100,37 @@
           }
         }
       }
+    },
+    "ns-multi-tabs": {
+      "projectType": "library",
+      "root": "projects/ns-multi-tabs",
+      "sourceRoot": "projects/ns-multi-tabs/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ns-multi-tabs/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ns-multi-tabs/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ns-multi-tabs/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ns-multi-tabs/src/test.ts",
+            "tsConfig": "projects/ns-multi-tabs/tsconfig.spec.json",
+            "karmaConfig": "projects/ns-multi-tabs/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "multi-tabs"
